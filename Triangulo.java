@@ -1,4 +1,4 @@
-public class Triangulo {
+public class Triangulo extends Figura implements Dibujable{
 
     // Atributos
     private int lado1;
@@ -11,4 +11,26 @@ public class Triangulo {
         this.lado2 = lado2;
         this.lado3 = lado3;
     }
+
+    @Override
+    public double calcularArea() {
+        //utilizando la formula de heron hallamos área
+        double s = (lado1 + lado2 + lado3)/2;
+        return Math.sqrt(s*(s-lado1)*(s-lado2)*(s-lado3));
+    }
+
+    @Override
+    public double calcularPerimetro() {
+        return lado1+lado2+lado3;
+    }
+
+    @Override
+    public void dibujar() {
+        // TODO Auto-generated method stub
+        System.out.println("Triangulo dibujado");
+    }
+
+    //metodos interfaz
+    
+    
 }
